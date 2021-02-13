@@ -1,16 +1,23 @@
-version: '3'
-# Other docker-compose examples in /examples
+version: '1'
 
 services:
   minecraft:
-    image: trueosiris/minecraft-skyfactory4
     ports:
       - "25565:25565"
-    volumes:
-      - "C:/dockervolumes/skyfactory/:/data"
     environment:
       EULA: "TRUE"
+      MAX_MEMORY: 32G
+    image: trueosiris/minecraft-skyfactory4
     restart: always
+  rcon:
+    image: itzg/rcon
+    ports:
+      - "4326:4326"
+      - "4327:4327"
+    volumes:
+      - "c:/dockervolumes/rcon:/opt/rcon-web-admin/db"
+      - "C:/dockervolumes/skyfactory/:/data"
 
 volumes:
-  mc: {}
+  mcbig:
+  rcon:

@@ -21,9 +21,9 @@ RUN chmod +x /start.sh
 
 USER minecraft
 
-VOLUME /data
+VOLUME c:/dockervolumes/skyfactory/:/data
 ADD server.properties /tmp/server.properties
-WORKDIR /data
+WORKDIR c:/dockervolumes/skyfactory/:/data
 
 EXPOSE 25565
 
@@ -31,4 +31,4 @@ CMD ["/start.sh"]
 
 ENV MOTD "A Minecraft (SkyFactory 4.2.2) Server Powered by Docker"
 ENV LEVEL world
-ENV JVM_OPTS "-Xms2048m -Xmx2048m"
+ENV JVM_OPTS "-Xms2048m -Xmx10000m"
