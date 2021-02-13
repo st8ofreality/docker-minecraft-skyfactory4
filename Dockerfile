@@ -1,6 +1,6 @@
 FROM java:8
 
-MAINTAINER Tim Chaubet <tim@chaubet.be>
+MAINTAINER Jason Svir <jasonsvir@gmail.com>
 
 RUN apt-get install -y wget unzip && \
  addgroup --gid 1234 minecraft && \
